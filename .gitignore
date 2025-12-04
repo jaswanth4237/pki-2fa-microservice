@@ -1,0 +1,17 @@
+# Encrypted seed (do NOT commit)
+encrypted_seed.txt
+
+# Logs
+*.log
+*.txt
+
+# Java files
+*.class
+
+# Cache
+__pycache__/
+*.pyc
+
+# IDE files
+.vscode/
+.idea/
