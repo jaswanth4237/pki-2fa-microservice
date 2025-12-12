@@ -1,18 +1,19 @@
+import java.util.Map;
+import java.util.HashMap;
+
 public class VerifyTOTPUtil {
 
     public static boolean verify(String hexSeed, String code) {
         try {
-            long currentWindow = System.currentTimeMillis() / 1000L / 30L;
+            int otpLength = code.length();
 
-            // Accept previous, current, and next window (±1)
-            for (long w = currentWindow - 1; w <= currentWindow + 1; w++) {
-                String expected = TOTP.generateTOTP(hexSeed, w, 6);
-                if (expected.equals(code)) {
-                    return true;
-                }
-            }
+            // 30-second time window
+            long w = System.currentTimeMillis() / 30000;
 
-            return false;
+            // Generate expected TOTP for this window
+            String expected = TOTP.generateTOTP(hexSeed, w, otpLength);
+
+            return expected.equals(code);
 
         } catch (Exception e) {
             e.printStackTrace();

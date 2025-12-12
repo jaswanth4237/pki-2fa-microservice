@@ -13,5 +13,6 @@ __pycache__/
 *.pyc
 
 # IDE files
-.vscode/
+.vscode/                                                                                                                                                                                                    
 .idea/
+cron/2fa-cron text eol=lf
