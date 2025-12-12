@@ -16,3 +16,5 @@ __pycache__/
 .vscode/                                                                                                                                                                                                    
 .idea/
 cron/2fa-cron text eol=lf
+
+*.pem
